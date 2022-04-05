@@ -1,6 +1,7 @@
 package ro.ase.cts.g1099.models;
 
 import ro.ase.cts.g1099.exceptions.InvalidLoanValException;
+import ro.ase.cts.g1099.exceptions.InvalidRateValException;
 import ro.ase.cts.g1099.models.Account;
 
 public class Account {
@@ -39,20 +40,26 @@ public class Account {
 		return this.rateValue;
 	}
 	
+	public void setRate(double rateValue) {
+		if (rateValue < 0)
+			throw new InvalidRateValException();
+		else {
+			this.rateValue = rateValue;
+		}
+	}
+	
 	public double getMonthlyRate() {
 		System.out.println("The monthly rate is " + loanValue * rateValue);
 		return loanValue*rateValue;
 	}
 	
 	
-	
-	
-	public void print() {
+	public void printStatement() {
 		int vb = 10;
 		System.out.println("This is an account");
 	}
 
-	public static double calculate(Account[] 	accounts)
+	public static double calculateTotalFee(Account[] 	accounts)
 	{
 	double totalFee=0.0;
 	Account	account;

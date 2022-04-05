@@ -14,7 +14,8 @@ Looking over our code, we can observe that it needs some changes regarding the n
 		->rename setLoanValue() and constructor parameters (value) to be more suggestive -> loanValue
 		->rename to_string() function using name conventions -> toString()
  		->rename the calculate() function to be more suggestive -> computeBrokerTotalFee()
- 		-> rename function print() to -> printStatement()
+ 		->rename the print() function to -> printStatement()
+ 		->rename the calculate() function to -> calculateTotalFee()
 
 
 	Step 2- Make sure the code formatting is applied
@@ -39,6 +40,7 @@ Looking over our code, we can observe that it needs some changes regarding the n
 				by adding this. to the return
 		->modify the getMonthlyRate() function to also display the monthly rate by adding: 
 		"System.out.println("The monthly rate is " + loanValue * rateValue)"
+		->add a setRate() method
 			
 	Step 4- Managing exceptions
 		-> create a new package for managing custom exceptions rather than standard exceptions:
