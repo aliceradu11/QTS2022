@@ -1,0 +1,31 @@
+----------Code refactoring----------
+Steps in completing the assignment
+
+In the beginning, as we saw in our courses, the first question that we need to answer when analyzing over a code snippet is
+"Am I able to understand the code easily?" If the answer is no, then we have to refractor the code in order to be as suggestive as possible.
+Looking over our code, we can observe that it needs some changes regarding the names, leading us to the first step:
+	Step 1- Use Intention-Revealing Names
+		->we will create a new package called ro.ase.cts.g1099.models, where we will move our Account class
+		->rename the following class variables in the following way: 
+						-loan_value to loanValue
+						-account_Type to accountType
+						-rate to rateValue
+		->rename the getters & setters to be more suggestive -> getLoanValue() & setLoanValue()
+		->rename setLoanValue() and constructor parameters (value) to be more suggestive -> loanValue
+		->rename to_string() function using name conventions -> toString()
+ 		->rename the calculate() function to be more suggestive -> computeBrokerTotalFee()
+ 		-> rename function print() to -> printStatement()
+
+
+	Step 2- Checking the code
+		->move the constructor at the beginning of the class for having a clearer view
+		->move the toString @Override at the end of the class
+		->added brackets for if statements with a single instruction
+		->re-align the code to be easier to read (CTRL+ALT+F)
+
+
+	Step 2- Remove statics and use enum
+		->create an enum called AccountType and define the types that an account can take;
+		->make sure to link the AccountType enum with the Account class by creating a private variable private AccountType accountType
+		(and delete the old one)
+		->make sure to also modify the constructor
