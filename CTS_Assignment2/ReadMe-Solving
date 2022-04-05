@@ -2,7 +2,7 @@
 Steps in completing the assignment
 
 In the beginning, as we saw in our courses, the first question that we need to answer when analyzing over a code snippet is
-"Am I able to understand the code easily?" If the answer is no, then we have to refractor the code in order to be as suggestive as possible.
+"Am I able to understand the code easily?" If the answer is no, then we have to refactor the code in order to be as suggestive as possible.
 Looking over our code, we can observe that it needs some changes regarding the names, leading us to the first step:
 	Step 1- Use Intention-Revealing Names
 		->we will create a new package called ro.ase.cts.g1099.models, where we will move our Account class
@@ -13,9 +13,8 @@ Looking over our code, we can observe that it needs some changes regarding the n
 		->rename the getters & setters to be more suggestive -> getLoanValue() & setLoanValue()
 		->rename setLoanValue() and constructor parameters (value) to be more suggestive -> loanValue
 		->rename to_string() function using name conventions -> toString()
- 		->rename the calculate() function to be more suggestive -> computeBrokerTotalFee()
+ 		->rename the calculate() function to be more suggestive -> calculateTotalFee()
  		->rename the print() function to -> printStatement()
- 		->rename the calculate() function to -> calculateTotalFee()
 
 After we've renamed our variables & methods, we also need to check the code to see if it's easy to understand, as it can be confusing.
 How can we do that? By going through step 2:
@@ -23,7 +22,6 @@ How can we do that? By going through step 2:
 		->move the constructor at the beginning of the class for having a clearer view
 		->move the toString @Override at the end of the class
 		->move the getLoanValue() and setLoanValue() after the constructor
-		->added brackets for if statements with a single instruction
 		->re-align the code to be easier to read (CTRL+ALT+F)
 		->remove useless comments
 
@@ -37,7 +35,6 @@ We also need to have in mind that we always have to use enums instead of constan
 		->make sure to link the AccountType enum with the Account class by creating a private variable private AccountType accountType
 		(and delete the old one)
 		->make sure to also modify the constructor
-		
 			
 	Step 4- Create an interface
 		->create a new package with an interface called MonthlyRateInterface as we need to refer to objects by their interfaces
@@ -50,19 +47,22 @@ We also need to format out functions:
 			-getLoanValue()
 			-the public constructor
 				by adding this. to each return
-		->modify the getMonthlyRate() function to also display the monthly rate by adding: 
+		->modify the getMonthlyRate() function to also display to the console the monthly rate by adding: 
 				"System.out.println("The monthly rate is " + loanValue * rateValue)"
-		->add a setRate() method
+		->add a setRate() method (as we only have the getRate() method)
 		->add getter&setter for the daysActive variable;
 		->remove int temp = 365; from calculateTotalFee() function
-		->we need to make sure that our functions are as short as possinble, performing one action only!
+		->remove the printStatement method
+		->we need to make sure that our functions are as short as possible, performing one action only!
 					
 	Step 6- Managing exceptions
 		-> create a new package for managing custom exceptions rather than standard exceptions:
 			->for managing the loanValue we will create a class called InvalidLoanValException (also make sure to modify in the Account class)
-			->for managing the rateVal we will create a class called InvalidRateValException (also make sure to modify in the Account class)
+			->for managing the rateValue we will create a class called InvalidRateValException (also make sure to modify in the Account class)
 			->create a class called InvalidArgumentException which extends Exception 
-			
+	
+	And now this is it, our code looks better. Of course, it is room for more changes, making it even simpler than this.
+	--Final note:		
 	*We also need to split the calculateTotalFee function in 2 or even 3 functions, as it is too complex.
 	We should have a function which checks for the type of the account, if it is premium or super premium, and maybe another function who
 	concludes the final total value, but I'm not sure how to implements those 2 :').

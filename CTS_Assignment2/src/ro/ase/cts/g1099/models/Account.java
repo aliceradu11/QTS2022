@@ -29,9 +29,8 @@ public class Account implements MonthlyRateInterface {
 	public void setLoanValue(double loanValue) {
 		if (loanValue < 0)
 			throw new InvalidLoanValException();
-		else {
+		else 
 			this.loanValue = loanValue;
-		}
 	}
 
 	public double getRate() {
@@ -42,9 +41,8 @@ public class Account implements MonthlyRateInterface {
 	public void setRate(double rateValue) {
 		if (rateValue < 0)
 			throw new InvalidRateValException();
-		else {
+		else 
 			this.rateValue = rateValue;
-		}
 	}
 
 	public int getDaysActive() {
@@ -55,9 +53,8 @@ public class Account implements MonthlyRateInterface {
 	public void setDaysActive(int daysActive) throws InvalidArgumentException {
 		if(daysActive <0)
 			throw new InvalidArgumentException();
-		else {
+		else 
 			this.daysActive = daysActive;
-		}
 	}
 	
 	@Override
