@@ -7,17 +7,12 @@ public class Account {
 	public double	loanValue,rateValue;	
 	public int	daysActive;
 	
-	public double getLoanValue() {
-		System.out.println("The loan value is " + this.loanValue);
-		return loanValue;
-	}
-	
 	public Account(double loanValue, double rateValue, AccountType accountType) throws Exception {
 		if(loanValue<0)
 			throw new Exception();
 		else
 		{
-			loanValue = loanValue;
+			this.loanValue = loanValue;
 		}
 		this.rateValue = rateValue;
 		this.accountType = accountType;
@@ -33,12 +28,17 @@ public class Account {
 		return loanValue*rateValue;
 	}
 	
+	public double getLoanValue() {
+		System.out.println("The loan value is " + this.loanValue);
+		return loanValue;
+	}
+	
 	public void setLoanValue(double loanValue) throws Exception {
 		if(loanValue<0)
 			throw new Exception();
 		else
 		{
-			loanValue = loanValue;
+			this.loanValue = loanValue;
 		}
 	}
 	

@@ -29,3 +29,11 @@ Looking over our code, we can observe that it needs some changes regarding the n
 		->make sure to link the AccountType enum with the Account class by creating a private variable private AccountType accountType
 		(and delete the old one)
 		->make sure to also modify the constructor
+		
+	Step 3- Check the functions and their returns
+		->modify the return of the following functions:
+			-setLoanValue()
+			-getLoanValue()
+			-the public constructor
+				by adding this. to the return
+			
