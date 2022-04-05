@@ -17,9 +17,10 @@ Looking over our code, we can observe that it needs some changes regarding the n
  		-> rename function print() to -> printStatement()
 
 
-	Step 2- Checking the code
+	Step 2- Make sure the code formatting is applied
 		->move the constructor at the beginning of the class for having a clearer view
 		->move the toString @Override at the end of the class
+		->move the getLoanValue() and setLoanValue() after the constructor
 		->added brackets for if statements with a single instruction
 		->re-align the code to be easier to read (CTRL+ALT+F)
 
@@ -36,4 +37,9 @@ Looking over our code, we can observe that it needs some changes regarding the n
 			-getLoanValue()
 			-the public constructor
 				by adding this. to the return
+		->modify the getMonthlyRate() function to also display the monthly rate by adding: 
+		"System.out.println("The monthly rate is " + loanValue * rateValue)"
 			
+	Step 4- Managing exceptions
+		-> create a new package for managing custom exceptions rather than standard exceptions:
+			->for managing the loanValue we will create a class called InvalidLoanValException (also make sure to modify in the Account class)

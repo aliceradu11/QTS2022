@@ -1,5 +1,6 @@
 package ro.ase.cts.g1099.models;
 
+import ro.ase.cts.g1099.exceptions.InvalidLoanValException;
 import ro.ase.cts.g1099.models.Account;
 
 public class Account {
@@ -9,7 +10,9 @@ public class Account {
 	
 	public Account(double loanValue, double rateValue, AccountType accountType) throws Exception {
 		if(loanValue<0)
+		{
 			throw new Exception();
+		}
 		else
 		{
 			this.loanValue = loanValue;
@@ -18,29 +21,30 @@ public class Account {
 		this.accountType = accountType;
 	}
 	
-	public double getRate() {
-		System.out.println("The rate is "+rateValue);
-		return this.rateValue;
-	}
-	
-	//must have method - the lead has requested it in all classes
-	public double getMonthlyRate() {
-		return loanValue*rateValue;
-	}
-	
 	public double getLoanValue() {
 		System.out.println("The loan value is " + this.loanValue);
 		return loanValue;
 	}
 	
-	public void setLoanValue(double loanValue) throws Exception {
-		if(loanValue<0)
-			throw new Exception();
-		else
-		{
+	public void setLoanValue(double loanValue) {
+		if (loanValue < 0)
+			throw new InvalidLoanValException();
+		else {
 			this.loanValue = loanValue;
 		}
 	}
+	
+	public double getRate() {
+		System.out.println("The rate is "+rateValue);
+		return this.rateValue;
+	}
+	
+	public double getMonthlyRate() {
+		System.out.println("The monthly rate is " + loanValue * rateValue);
+		return loanValue*rateValue;
+	}
+	
+	
 	
 	
 	public void print() {
