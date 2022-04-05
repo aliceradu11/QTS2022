@@ -68,10 +68,9 @@ public class Account implements MonthlyRateInterface {
 	public static double calculateTotalFee(Account[] accounts) {
 		double totalFee = 0.0;
 		Account account;
-		//int temp = 365;
 		for (int i = 0; i < accounts.length; i++) {
 			account = accounts[i];
-			if (account.accountType == Account.PREMIUM || account.accountType == Account.SUPER_PREMIUM)
+			if (account.accountType == AccountType.PREMIUM || account.accountType == AccountType.SUPER_PREMIUM)
 				totalFee += .0125 * (
 				account.loanValue * Math.pow(account.rateValue, (account.daysActive / 365)) - account.loanValue);
 		}

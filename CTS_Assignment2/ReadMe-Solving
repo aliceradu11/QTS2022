@@ -38,8 +38,13 @@ We also need to have in mind that we always have to use enums instead of constan
 		(and delete the old one)
 		->make sure to also modify the constructor
 		
+			
+	Step 4- Create an interface
+		->create a new package with an interface called MonthlyRateInterface as we need to refer to objects by their interfaces
+		->modify the Account class by adding "implements MonthlyRateInterface" in the class defining
+		
 We also need to format out functions:		
-	Step 4- Check the functions and their returns
+	Step 5- Check the functions and their returns
 		->modify the return of the following functions:
 			-setLoanValue()
 			-getLoanValue()
@@ -49,11 +54,9 @@ We also need to format out functions:
 		"System.out.println("The monthly rate is " + loanValue * rateValue)"
 		->add a setRate() method
 		->add getter&setter for the daysActive variable;
-	
-	Step 5- Create an interface
-		->create a new package with an interface called MonthlyRateInterface as we need to refer to objects by their interfaces
-		->modify the Account class by adding "implements MonthlyRateInterface" in the class defining
-			
+		->remove int temp = 365; from calculateTotalFee()
+		->we need to make sure that our functions are as short as possinble, performing one action only!
+					
 	Step 6- Managing exceptions
 		-> create a new package for managing custom exceptions rather than standard exceptions:
 			->for managing the loanValue we will create a class called InvalidLoanValException (also make sure to modify in the Account class)
