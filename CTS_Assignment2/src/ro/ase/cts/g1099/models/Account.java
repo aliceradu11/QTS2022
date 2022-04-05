@@ -2,9 +2,10 @@ package ro.ase.cts.g1099.models;
 
 import ro.ase.cts.g1099.exceptions.InvalidLoanValException;
 import ro.ase.cts.g1099.exceptions.InvalidRateValException;
+import ro.ase.cts.g1099.interfaces.MonthlyRateInterface;
 import ro.ase.cts.g1099.models.Account;
 
-public class Account {
+public class Account implements MonthlyRateInterface{
 	private AccountType accountType;
 	public double	loanValue,rateValue;	
 	public int	daysActive;

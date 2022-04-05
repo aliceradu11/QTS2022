@@ -41,7 +41,12 @@ Looking over our code, we can observe that it needs some changes regarding the n
 		->modify the getMonthlyRate() function to also display the monthly rate by adding: 
 		"System.out.println("The monthly rate is " + loanValue * rateValue)"
 		->add a setRate() method
+	
+	Step 4- Create an interface
+		->create a new package with an interface called MonthlyRateInterface as we need to refer to objects by their interfaces
+		->modify the Account class by adding "implements MonthlyRateInterface" in the class defining
 			
-	Step 4- Managing exceptions
+	Step 5- Managing exceptions
 		-> create a new package for managing custom exceptions rather than standard exceptions:
 			->for managing the loanValue we will create a class called InvalidLoanValException (also make sure to modify in the Account class)
+			->for managing the rateVal we will create a class called InvalidRateValException (also make sure to mofigy in the Account class)
