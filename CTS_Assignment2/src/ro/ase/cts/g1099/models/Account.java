@@ -1,5 +1,6 @@
 package ro.ase.cts.g1099.models;
 
+import ro.ase.cts.g1099.exceptions.InvalidArgumentException;
 import ro.ase.cts.g1099.exceptions.InvalidLoanValException;
 import ro.ase.cts.g1099.exceptions.InvalidRateValException;
 import ro.ase.cts.g1099.interfaces.MonthlyRateInterface;
@@ -10,9 +11,9 @@ public class Account implements MonthlyRateInterface {
 	public double loanValue, rateValue;
 	public int daysActive;
 
-	public Account(double loanValue, double rateValue, AccountType accountType) throws Exception {
+	public Account(double loanValue, double rateValue, AccountType accountType) throws InvalidArgumentException {
 		if (loanValue < 0)
-			throw new Exception();
+			throw new InvalidArgumentException();
 		else {
 			this.loanValue = loanValue;
 			this.rateValue = rateValue;
@@ -51,9 +52,9 @@ public class Account implements MonthlyRateInterface {
 		return daysActive;
 	}
 
-	public void setDaysActive(int daysActive) throws Exception {
+	public void setDaysActive(int daysActive) throws InvalidArgumentException {
 		if(daysActive <0)
-			throw new Exception();
+			throw new InvalidArgumentException();
 		else {
 			this.daysActive = daysActive;
 		}

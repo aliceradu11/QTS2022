@@ -49,15 +49,20 @@ We also need to format out functions:
 			-setLoanValue()
 			-getLoanValue()
 			-the public constructor
-				by adding this. to the return
+				by adding this. to each return
 		->modify the getMonthlyRate() function to also display the monthly rate by adding: 
-		"System.out.println("The monthly rate is " + loanValue * rateValue)"
+				"System.out.println("The monthly rate is " + loanValue * rateValue)"
 		->add a setRate() method
 		->add getter&setter for the daysActive variable;
-		->remove int temp = 365; from calculateTotalFee()
+		->remove int temp = 365; from calculateTotalFee() function
 		->we need to make sure that our functions are as short as possinble, performing one action only!
 					
 	Step 6- Managing exceptions
 		-> create a new package for managing custom exceptions rather than standard exceptions:
 			->for managing the loanValue we will create a class called InvalidLoanValException (also make sure to modify in the Account class)
 			->for managing the rateVal we will create a class called InvalidRateValException (also make sure to modify in the Account class)
+			->create a class called InvalidArgumentException which extends Exception 
+			
+	*We also need to split the calculateTotalFee function in 2 or even 3 functions, as it is too complex.
+	We should have a function which checks for the type of the account, if it is premium or super premium, and maybe another function who
+	concludes the final total value, but I'm not sure how to implements those 2 :').
