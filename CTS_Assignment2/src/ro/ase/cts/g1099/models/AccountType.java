@@ -12,7 +12,7 @@ public enum AccountType {
 		this.type=type;
 	}
 	
-	public int getType() {
+	public int getAccountType() {
 		return type;
 	}	
 }

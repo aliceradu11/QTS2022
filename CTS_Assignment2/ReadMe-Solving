@@ -17,22 +17,29 @@ Looking over our code, we can observe that it needs some changes regarding the n
  		->rename the print() function to -> printStatement()
  		->rename the calculate() function to -> calculateTotalFee()
 
-
+After we've renamed our variables & methods, we also need to check the code to see if it's easy to understand, as it can be confusing.
+How can we do that? By going through step 2:
 	Step 2- Make sure the code formatting is applied
 		->move the constructor at the beginning of the class for having a clearer view
 		->move the toString @Override at the end of the class
 		->move the getLoanValue() and setLoanValue() after the constructor
 		->added brackets for if statements with a single instruction
 		->re-align the code to be easier to read (CTRL+ALT+F)
+		->remove useless comments
 
-
-	Step 2- Remove statics and use enum
+By performing steps 1&2, our code looks already cleaner and it's more intuitive, already fulfilling some basic clean code concepts, such as:
+												"The code must be easy to read"
+																&
+											  "The code must be easy to understand".
+We also need to have in mind that we always have to use enums instead of constants, leading us to step 3:
+	Step 3- Remove statics and use enum
 		->create an enum called AccountType and define the types that an account can take;
 		->make sure to link the AccountType enum with the Account class by creating a private variable private AccountType accountType
 		(and delete the old one)
 		->make sure to also modify the constructor
 		
-	Step 3- Check the functions and their returns
+We also need to format out functions:		
+	Step 4- Check the functions and their returns
 		->modify the return of the following functions:
 			-setLoanValue()
 			-getLoanValue()
@@ -41,12 +48,13 @@ Looking over our code, we can observe that it needs some changes regarding the n
 		->modify the getMonthlyRate() function to also display the monthly rate by adding: 
 		"System.out.println("The monthly rate is " + loanValue * rateValue)"
 		->add a setRate() method
+		->add getter&setter for the daysActive variable;
 	
-	Step 4- Create an interface
+	Step 5- Create an interface
 		->create a new package with an interface called MonthlyRateInterface as we need to refer to objects by their interfaces
 		->modify the Account class by adding "implements MonthlyRateInterface" in the class defining
 			
-	Step 5- Managing exceptions
+	Step 6- Managing exceptions
 		-> create a new package for managing custom exceptions rather than standard exceptions:
 			->for managing the loanValue we will create a class called InvalidLoanValException (also make sure to modify in the Account class)
-			->for managing the rateVal we will create a class called InvalidRateValException (also make sure to mofigy in the Account class)
+			->for managing the rateVal we will create a class called InvalidRateValException (also make sure to modify in the Account class)
